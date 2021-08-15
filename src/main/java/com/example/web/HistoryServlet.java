@@ -18,7 +18,7 @@ import com.example.repository.TransactionRepositoryImpl;
 
 
 
-@WebServlet(urlPatterns= {"/history.jsp"})
+@WebServlet(urlPatterns= {"/history"})
 public class HistoryServlet extends HttpServlet {
 
 	TransactionRepository transactionRepository = new TransactionRepositoryImpl();
@@ -28,6 +28,6 @@ public class HistoryServlet extends HttpServlet {
 		
 		List<Txn> txns = transactionRepository.getTransactions();
 		req.setAttribute("txns", txns);
-		req.getRequestDispatcher("history.jsp").forward(req, resp);
+		req.getRequestDispatcher("history.html").forward(req, resp);
 	}
 }
